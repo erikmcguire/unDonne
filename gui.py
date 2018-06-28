@@ -47,8 +47,7 @@ class GenGUI():
             sonnett, titlek = karkoav.generate()
         else:
             if t == 'PCFG':
-                sonnett = gen_pcfg(kpunk,
-                                   l=14, d=8)
+                sonnett = gen_pcfg(kpunk, d=8)
             elif t == 'Bigrams':
                 sonnett = gen_from_cfd(kpunk, cpd,
                                        seed, hslines)
@@ -57,7 +56,7 @@ class GenGUI():
         lbl.pack(side=TOP)
         self._tex.configure(font=('Garamond', 14),
                             background="antiquewhite")
-        self._tex.insert(1.0, "\n{}".format(sonnett))
+        self._tex.insert(1.0, "\n{}".format(titlek + '\n\n' + sonnett if titlek else sonnett))
         e_btn = tk.Button(master=self._tframe,
                           text="Export",
                           command=lambda:
@@ -67,7 +66,7 @@ class GenGUI():
         if t == 'char-OMM' and self._v.get() == 1:
             self._imp.focus_set()
             dd, title, lines = karkoav.get_most_contrib()
-            karkoav.gen_svg(dd, re.sub(r"[^A-z\W]", "", title), lines)
+            karkoav.gen_svg(dd=dd, title=re.sub(r"[^A-z\W]", "", title), lines=lines)
 
     def _make_button(self, t):
         if t == 'c':

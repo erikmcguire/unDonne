@@ -326,7 +326,7 @@ class Karkoav:
                         break
                 if len(indices) == 14:
                     f = True
-        return indices, self._title, self._lines.split('\n')
+        return indices, self._title, self._lines.split('\n')[:-1]
 
     def _make_paths(self, dd, lines):
         mpath = (lambda i, entry:
@@ -353,7 +353,8 @@ class Karkoav:
                               end=(path.point(0.0) + len(line)))
                          for i, (line, path) in enumerate(zip(lines, paths))],
               text=lines, font_size=.4, svg_attributes={"viewBox": "-1 -1 50 25"},
-              openinbrowser=False, **{'filename': get_expath(title)})
+              openinbrowser=False,
+              **{'filename': get_expath(title)})
 
     def generate(self, n: int = None) -> str:
         """Generate and return resulting lines."""
