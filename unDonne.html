@@ -11826,11 +11826,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2><p>This is yet another work in progress, a final project for Dr. Noriko Tomuro's <a href="http://condor.depaul.edu/ntomuro/courses/NLP594s18">Topics in AI: Natural Language Processing</a> course, CSC 594, at DePaul University: a probabilistic Petrarchan sonnet generator. Specifically, this system is a suite of tools for generating sonnets closely modeled on the work of John Donne (1572-1631), a preacher, lawyer, and poet active in the early 17c, during the reign of King James.</p>
-<p>Donne's work, reflecting his life—both imprisoned and destitute due to a marriage scandal and essentially commanded by King James to become Royal Chaplain after his conversion to Protestantism—ranged from very down-to-earth, witty love poems, to intensely emotional religious meditations. <p></p>
-<p>Given Donne's work as input, the system will output a 14-line poem adhering to varying extent to the Petrarchan sonnet structure as introduced into English by <a href="https://en.wikipedia.org/wiki/Thomas_Wyatt_%28poet%29#Wyatt&#39;s_poetry_and_influence">Sir Thomas Wyatt</a> and implemented by Donne.</p>
-<p>The system imposes sundry algorithmic constraints which encode the qualitative features described by literary tradition (i.e., scansion), and generates poetry from the parsed Donne corpus with a mixed set of possible methods, including probabilistic or stochastic context-free grammar, and smoothed and unsmoothed MLE <em>n</em>-gram modeling at the word and character levels. Vector space semantics and sentiment analysis inform these techniques alongside resources such as pronunciation and concept dictionaries and thesauri, viz. <a href="https://wordnet.princeton.edu/">WordNet</a>, <a href="http://sentiwordnet.isti.cnr.it">SentiWordNet</a>, <a href="http://www.nltk.org/_modules/nltk/corpus/reader/lin.html">Lin's Thesaurus</a>, and <a href="http://www.speech.cs.cmu.edu/cgi-bin/cmudict">CMUdict</a>.</p>
-
+<div align=right><a href="#bottom" style="text-decoration: none;">🢃</a></div>
 </div>
 </div>
 </div>
@@ -11838,6 +11834,10 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2><p>This is yet another work in progress, a final project for Dr. Noriko Tomuro's <a href="http://condor.depaul.edu/ntomuro/courses/NLP594s18">Topics in AI: Natural Language Processing</a> course, CSC 594, at DePaul University: a probabilistic Petrarchan sonnet generator. Specifically, this system is a suite of tools for generating sonnets closely modeled on the work of John Donne (1572-1631), a preacher, lawyer, and poet active in the early 17c, during the reign of King James.</p>
+<p>Donne's work, reflecting his life—both imprisoned and destitute due to a marriage scandal and essentially commanded by King James to become Royal Chaplain after his conversion to Protestantism—ranged from very down-to-earth, witty love poems, to intensely emotional religious meditations. <p></p>
+<p>Given Donne's work as input, the system will output a 14-line poem adhering to varying extent to the Petrarchan sonnet structure as introduced into English by <a href="https://en.wikipedia.org/wiki/Thomas_Wyatt_%28poet%29#Wyatt&#39;s_poetry_and_influence">Sir Thomas Wyatt</a> and implemented by Donne.</p>
+<p>The system imposes sundry algorithmic constraints which encode the qualitative features described by literary tradition (i.e., scansion), and generates poetry from the parsed Donne corpus with a mixed set of possible methods, including probabilistic or stochastic context-free grammar, and smoothed and unsmoothed MLE <em>n</em>-gram modeling at the word and character levels. Vector space semantics and sentiment analysis inform these techniques alongside resources such as pronunciation and concept dictionaries and thesauri, viz. <a href="https://wordnet.princeton.edu/">WordNet</a>, <a href="http://sentiwordnet.isti.cnr.it">SentiWordNet</a>, <a href="http://www.nltk.org/_modules/nltk/corpus/reader/lin.html">Lin's Thesaurus</a>, and <a href="http://www.speech.cs.cmu.edu/cgi-bin/cmudict">CMUdict</a>.</p>
 <p>Sonnets are an ideal and somewhat traditional target for algorithmic generation due to
 their highly structured forms, in terms of features such as rhyme
 schemes (such as <em>ababab</em>), metre (e.g., iambic pentameter), and the
@@ -11852,14 +11852,6 @@ performing
 ensure adherence to rhythmic requirements, with some authorial leeway 
 with respect to how tightly to require rhymes or allowing for orthographic 
 matching in addition to phonographic.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <p>The general purpose here was to leverage the domain of English literature in a productive NLP task, establishing a foundation from which I can both learn and explore more of these techniques, and subjects, and create useful tools for writers, literary theorists, and linguists of all stripes; a sort of cross-disciplinary armanentarium. By “productive” I refer to manifesting meaningful intent as code and text, a dynamic we might diagram simply as [Intent] → [Code ↔ Text].</p>
 <p>My reasoning is that just as writing workshops and output practice are complementary to reading and listening in literature and language learning, programmatically producing poetry is a powerful means to study Digital Humanities and NLP. Doing so with tightly structured poetry allows for the exploration of algorithmic constraints alongside data-driven models.</p>
 <p>The project itself I view as something of a playground for creative, theoretical experimentation, not merely tool-making, but tool-making itself as artistic practice and literary hermeneutics.</p>
@@ -11872,9 +11864,25 @@ matching in addition to phonographic.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<div align=right><a href="#top" style="text-decoration: none;">🢁</a></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Sonnets">Sonnets<a class="anchor-link" href="#Sonnets">&#182;</a></h2><p>To describe Petrarchan sonnets in more detail: These 14-line poems as written in English typically adhere to a fourfold structure (4-4-4-2), in two main parts. The first eight lines (2 4-line quatrains) are called the octave or octet, which traditionally introduces a problem, and the final 6-lines form the sestet (quatrain and couplet), which might develop a solution. Each line is approximately 10 syllables, with a particular rhythm and rhyme scheme, as shown, where the octave rhyme scheme is [abba, abba] and the sestet is [cddc, ee].</p>
 <p><img src="assets/img/hsdeath.png" alt=""></p>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align=right><a href="#top" style="text-decoration: none;">🢁</a></div>
 </div>
 </div>
 </div>
@@ -11894,12 +11902,28 @@ matching in addition to phonographic.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<div align=right><a href="#top" style="text-decoration: none;">🢁</a></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Approaches">Approaches<a class="anchor-link" href="#Approaches">&#182;</a></h2><p>There have been many approaches to poetry generation with computers. These include using context-free grammars to generate lines, weighted with probabilities for parses induced from analyzing input text. A recent look at PCFG (Probabilistic Context-Free Grammar) for poetry generation can be seen from <a href="https://medium.com/@yoav.goldberg/an-adversarial-review-of-adversarial-generation-of-natural-language-409ac3378bd7">Goldberg's critique</a> of Rajeswar, et al., <a href="https://arxiv.org/abs/1705.10929">2017</a>.</p>
 <p>One can also take an evolutionary approach (<a href="https://www.era.lib.ed.ac.uk/handle/1842/314">Manurung, 2004</a>) and define a fitness function based on some metric (e.g., grammatical, meaningful, ‘aesthetically pleasing’) and use it to modify encoded language <a href="https://natureofcode.com/book/chapter-9-the-evolution-of-code/">genetically</a> through an iterative process of selection, combination and mutation.</p>
 <p>And of course, we have various means to use the probability distributions of a text to conditionally sample from a corpus and create new sequences. These productions operate within the constraints of the type of poetic structure we want to create, such as haiku or sonnets.</p>
 <p><a href="https://shiffman.net/a2z/markov/">Markov chains</a> and the association with poetry and text generation have existed since their onset, with Andrei Markov’s modeling of Pushkin’s verse novel, <em>Eugene Onegin</em> (<a href="https://www.americanscientist.org/article/first-links-in-the-markov-chain">1913</a>), or Claude Shannon's explorations, giving such results as “IN NO IST LAT WHEY CRATICT FROURE BIRS GROCID…” (<a href="https://en.wikipedia.org/wiki/A_Mathematical_Theory_of_Communication">1948</a>).</p>
 <p>For this project, I explored a probabilistic context-free grammar approach and <em>n</em>-gram likelihood-based generation at both word and character levels.</p>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align=right><a href="#top" style="text-decoration: none;">🢁</a></div>
 </div>
 </div>
 </div>
@@ -11983,7 +12007,7 @@ patterns. Later versions of BEEP simply removed the markings entirely.
 Therefore, given the primarily orthographic reception I imagine the
 project will have, I simply imported CMUdict from NLTK instead, despite
 its North American basis.</p>
-<p>At any rate, as well as importing various corpora and tokenizers, the
+<p>As well as importing various corpora and tokenizers, the
 loading module parses the types, tokens, lines, and files on three
 levels: a larger corpus of John Donne’s poetry and prose; just the
 sonnets and sonnet-like poems; and individual sonnets—and defines an
@@ -11995,6 +12019,14 @@ run, namely a particular Donne sonnet’s rhyme and metrical scheme, etc.,
 sampling from a relatively small inventory of syntactic and semantic
 elements.</p>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align=right><a href="#top" style="text-decoration: none;">🢁</a></div>
 </div>
 </div>
 </div>
@@ -12036,15 +12068,13 @@ gen_syn() function. This function is a modified version of available code,
 here focused on ‘subjectivity’ (1 –
 obj_score), with options to return synsets or orientation (positive or
 negative). There is also a function available to measure the ‘Word
-Mover’s Similarity,’ calculating inverse of the model’s
+Mover’s Similarity,’ calculating the inverse of the model’s
 Euclidean distance result for input of two lines, via the equation from gensim’s WmdSimilarity
 class.</p>
 <p>Also of note is the <em><a href="https://arxiv.org/abs/1607.04606v2">FastText</a></em> model, which I discovered after searching
 for character-level vector space approaches to complement the character-level Markov
 generator, conceptually if nothing else. This function is thus set to the default, as it uses subword
-features for embeddings. It is referred to as the <em>k</em> model as <em>k</em> is
-how I have preferred to distinguish the unsmoothed character <em>n</em>-grams
-used with the order <em>k</em> Markov chain from the smoothed NLTK bigram-based
+features for embeddings. I refer to it generally as the <em>k</em> model as <em>k</em> to distinguish the unsmoothed character <em>n</em>-grams used with the order <em>k</em> Markov chain from the smoothed NLTK word-level bigram-based
 generator.</p>
 
 </div>
@@ -12139,7 +12169,7 @@ for generating new lines that mimic that grammar. A function for
 defining said grammar writes the rules for the regular expression
 parser, which parses a sentence and uses regular expressions to rewrite
 it into Penn Treebank format, and creates a Tree from the resulting
-string, doing so repeatedly to create a treebank of sorts.</p>
+string, doing so repeatedly to create a toy treebank of sorts.</p>
 <p>The other functions in the file are modifications of NLTK’s CFG and ProbDist
 generate functions, adding an analysis of probabilities to the tree
 traversal and terminal selections.</p>
@@ -12151,9 +12181,17 @@ traversal and terminal selections.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<div align=right><a href="#top" style="text-decoration: none;">🢁</a></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="assets/img/pcfg.png" alt=""></p>
 <p><p></p>
-<center><small><em>[PCFG example tree via Hoffman, 2009 slide, in turn via Jurafsky & Schutze](https://courses.cs.washington.edu/courses/cse590a/09wi/pcfg.pdf)</em></small></center>
+<center><i><a href="https://courses.cs.washington.edu/courses/cse590a/09wi/pcfg.pdf">PCFG example tree via Hoffman, 2009 slide, in turn via Jurafsky & Schutze</a></i></center>
 </div>
 </div>
 </div>
@@ -12165,9 +12203,10 @@ traversal and terminal selections.</p>
 the sonnets’ lines per the above grammar functions, by inducing a grammar
 from the custom treebank and invoking the modified generate methods. As
 this can be a slow process, a timer allows the process to expire after an
-adjustable limit. Two functions are associated with the word-level
+adjustable limit.</p>
+<p>Two functions are associated with the word-level
 generator using the Laplace-smoothed conditional frequency distribution
-of bigrams. This basic smoothing was used primarily to establish foundational working code for the project.</p>
+of bigrams. This bog-standard smoothing was used primarily to establish foundational working code for the project.</p>
 <p>The first function, <em>gen_from_cfd</em>, initiates the process within broad
 constraints to create a sonnet-like structure, and pre- and post-
 process the results from the <em>generate_model</em> function, which generates
@@ -12277,10 +12316,7 @@ between the above generators, printing the respective results.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Finally, the main.py file calls functions to load and define the corpora
-and template sonnet, and accepts command-line arguments to choose
-between the above generators, printing the respective results.</p>
-
+<div align=right><a href="#top" style="text-decoration: none;">🢁</a></div>
 </div>
 </div>
 </div>
@@ -12408,15 +12444,7 @@ two for the probabilities to shift accordingly.</p>
 <p>As this model took a line-based approach—as opposed to the full circular
 scans over the input used by Goldberg in his response to Karpathy, we
 preserve these line-specific lexical distributions.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Further-discussion">Further discussion<a class="anchor-link" href="#Further-discussion">&#182;</a></h2><p>For the PCFG, despite customizable tree depth limits, it took time to write clauses that wouldn’t cause the induction function to spin endlessly, and ultimately the archaic language, I suspect, is difficult to tag. The parser often sees long strings of nouns or verbs rather than potential predicate-argument structures and the like. Still, it has potential as a constraint for the other models.</p>
+<p>For the PCFG, despite customizable tree depth limits, it took time to write clauses that wouldn’t cause the induction function to spin endlessly, and ultimately the archaic language, I suspect, is difficult to tag. The parser often sees long strings of nouns or verbs rather than potential predicate-argument structures and the like. Still, it has potential as a constraint for the other models.</p>
 <p><p>
 For instance, an early result can be seen here:</p>
 <blockquote><div style="font-family: Garamond; text-indent: 0px;">All dim flower pilgrim shall thee arise<br>
@@ -12447,6 +12475,14 @@ Son/NNP loath/NN flesh/JJ time/NN and/CC let/VB he/PP died/VB,</div>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<div align=right><a href="#top" style="text-decoration: none;">🢁</a></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h2><p>This proved to be more challenging that I intended, and many of the problems began with choosing an archaic mode of English to constrain closely, rather than allowing automatic, wide-ranging inference from machine learning procedures. The creative process starts at the choice of data. Any decision affects both practical and artistic acceptability.</p>
 <p><p>
 I consider this project a failure in terms of implementing available tools well, and producing something worthwhile. But a success as a learning experience. Building the Markov chain from scratch and attempting to induce a useful grammar gave me a much deeper understanding, complementing my knowledge of neural networks.</p>
@@ -12462,14 +12498,7 @@ Some interesting observations I had was that adding a title to the generated son
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Future-Work">Future Work<a class="anchor-link" href="#Future-Work">&#182;</a></h2><p><p>
-One can see the value of production-oriented projects for learning, as it forces us to <a href="https://www.victoria.ac.nz/lals/about/staff/publications/paul-nation/2007-Four-strands.pdf#page=3">notice</a> [PDF, pp. 3-4] gaps in our more receptive abilities that we’ve glossed over when reading and listening, or when writing code where data analysis and interpretation is the final step.</p>
-<p><p>
-In this way, the role of NLG in Computer Science curricula might be analagous to how I envision Creative Writing workshops in Literature departments as STEM-like labs, complementing the receptive with the productive to learn and master concepts.</p>
-<p>In interdisciplinary terms, there are rich, untapped resources in theory and criticism for NLG, as one might find when exploring analyses of structured poetry. In turn, NLG can reveal more in literature and augment artistic production.</p>
-<p><p>
-Workshops might create a feedback loop, with computation quantifying and cognitive science analyzing writing to augment and attenuate it, and reciprocally, creativity and theory force may awareness of subjectivity and plasticity in these empirical models.</p>
-
+<div align=right><a href="#top" style="text-decoration: none;">🢁</a></div>
 </div>
 </div>
 </div>
@@ -12477,7 +12506,11 @@ Workshops might create a feedback loop, with computation quantifying and cogniti
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Future-Work">Future Work<a class="anchor-link" href="#Future-Work">&#182;</a></h2><p>The code is in dire need of
+<h2 id="Future-Work">Future Work<a class="anchor-link" href="#Future-Work">&#182;</a></h2><p>One can see the value of production-oriented projects for learning, as it forces us to <a href="https://www.victoria.ac.nz/lals/about/staff/publications/paul-nation/2007-Four-strands.pdf#page=3">notice</a> [PDF, pp. 3-4] gaps in our more receptive abilities that we’ve glossed over when reading and listening, or when writing code where data analysis and interpretation is the final step.</p>
+<p>In this way, the role of NLG in Computer Science curricula might be analagous to how I envision Creative Writing workshops in Literature departments as STEM-like labs, complementing the receptive with the productive to learn and master concepts.</p>
+<p>In interdisciplinary terms, there are rich, untapped resources in theory and criticism for NLG, as one might find when exploring analyses of structured poetry. In turn, NLG can reveal more in literature and augment artistic production.</p>
+<p>Workshops might create a feedback loop, with computation quantifying and cognitive science analyzing writing to augment and attenuate it, and reciprocally, creativity and theory force may awareness of subjectivity and plasticity in these empirical models.</p>
+<p>The code is in dire need of
 refactoring, and especially symbolic
 restructuring may be needed, with constraint handling searches and
 structures as seen in Peter Norvig and Stuart Russell’s seminal <em>AIMA</em>
@@ -12568,6 +12601,14 @@ the ever-widening gyre of code’s integration into society, to ease
 cognitive load and/or quickly catch mistakes during development, for
 example.</p>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align=right id="bottom"><a href="#top" style="text-decoration: none;">🢁</a></div>
 </div>
 </div>
 </div><footer id="attribution" style="float:right; color:#999; background:#fff;">
