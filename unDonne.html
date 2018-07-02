@@ -12354,12 +12354,12 @@ difficult. This became a frequent theme: performing automatic analysis
 on words such as “slipperinesse,” written in the older style, variant
 spellings cause errors and a kind of lossiness, missed opportunities.</p>
 <p>Likewise we can see inconsistent capitalization, although in this case I
-believe I failed to properly implement line capitalization.
+believe I failed to properly implement line capitalization at the time.
 Capitalization is inconsistent and somewhat arbitrary in early Englishes, and I did attempt to
 honor these authorial choices when tokenizing the text, although this
 can be refined with domain knowledge (recognize the purpose of emphasis,
 common noun-orientation), to counterbalance potential editorial and
-compositor errors and influences.</p>
+compositor errors and influences, and disambiguate stylistic and parsing errors.</p>
 <p>I believe the main fault is the sense of morphological rigidity and a
 general syntactic incoherence with abrupt shifts. This could be
 mitigated with more careful algorithm design, and/or blending with other
@@ -12487,9 +12487,9 @@ Son/NNP loath/NN flesh/JJ time/NN and/CC let/VB he/PP died/VB,</div>
 <p><p>
 I consider this project a failure in terms of implementing available tools well, and producing something worthwhile. But a success as a learning experience. Building the Markov chain from scratch and attempting to induce a useful grammar gave me a much deeper understanding, complementing my knowledge of neural networks.</p>
 <p><p>
-The most fundamental realization I had, practically speaking, was that for acceptable results as a tool or cultural artefact, I need to combine approaches, and ensure the system can be tweaked and tuned by users at every step, at simple or more advanced levels.</p>
+The most fundamental realization I had, practically speaking, was that for acceptable results as a tool or cultural artefact, we need to combine approaches, and ensure the system can be tweaked and tuned by users at every step, at simple or more advanced levels.</p>
 <p><p>
-Some interesting observations I had was that adding a title to the generated sonnets influenced my perception, as I began searching for a relationship when reading, and also how many latent variables, so to speak, can be captured by low-level models, such as revealing frequent patterns like alliteration.</p>
+Some interesting observations I had was that adding a title to the generated sonnets primed my interpretation, as I began searching for a relationship when reading, and also how many latent variables, so to speak, can be captured by low-level models, such as revealing frequent patterns like alliteration.</p>
 
 </div>
 </div>
@@ -12523,7 +12523,7 @@ blend and mutate results from different models, per the work of
 Manurung, et al. (<a href="https://www.era.lib.ed.ac.uk/handle/1842/314">2004</a>).</p>
 <p>More fine-grained use of sentiment is also of interest, especially in
 mirroring source texts to imitate the personality of Donne to create a
-kind of “flatline construct”—Donne frequently uses a rough humor in his language, in contrast to the
+kind of Gibsonian “flatline construct”—Donne frequently uses a rough humor in his language, in contrast to the
 loftier spiritual tones. Rhyming is a difficult component in part
 because the transmission is textual primarily, and read by readers who
 speak and subvocalize many Englishes.</p>
@@ -12544,15 +12544,14 @@ tool. This would also impel me to include piecewise visualization of the
 generation process, in a way that would not add too much overhead.
 Perhaps keeping logs for later reconstruction, rather than on-line.</p>
 <p>More careful proofreading and preprocessing of source texts is
-necessary, I think, and this brings us to the tricky aspect of the many,
-many versions of Donne’s poetry. There is a massive
+necessary, I think, and this brings us to the tricky aspect of the numerous versions of Donne’s poetry. There is a massive
 <a href="http://donnevariorum.tamu.edu/">tome</a> analyzing these variations due to
 editorial choices and mistakes over the centuries since his work was
 published. Which versions to use as “legitimate” ground truth is
 difficult; I chose versions here that I considered modern enough to have
 many dictionary results and consistent matches (the more archaic
 versions vary more within texts, I believe), offset by some more archaic
-versions that I personally found appealing, to give the results a more
+versions that I personally found preferable, to give the results a more
 aesthetically appealing flavor.</p>
 <p>This dynamic is of interest, also: when designing these as writing
 tools, how much to hardcode one’s personal preferences, and/or to design
@@ -12593,7 +12592,7 @@ whether bugs in my program had caused this. I realized that the age-old question
 here, and I found that having some measure of domain-knowledge made this
 process easier, allowing me to compose code with respect to the poetry’s
 properties from memory, rather than having to continually consult the
-source text(s). Typically, it is knowledge of code and maths that would
+source text(s). (We might turn to Oatley &amp; Djikic's <a href="https://pdfs.semanticscholar.org/e255/db2029d64a7eab805819acf4c009aead2198.pdf">article</a> [PDF] on <em>Writing as Thinking</em>, with respect to topic knowledge, for insights into this process.) Typically, it is knowledge of code and maths that would
 streamline that composition process. To me, this emphasized the
 uniqueness of systems such as this that cross domains, and the
 increasing importance of practitioner diversity and participation for
